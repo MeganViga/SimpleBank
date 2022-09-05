@@ -10,7 +10,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: amd64/ubuntu:latest
+    runs-on: ubuntu-latest
     services:
       # Label used to access the service container
       postgres:
@@ -36,7 +36,7 @@ jobs:
         go-version: 1.17.7
     - name: Download and install migrate
       run: |
-            curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-arm64.tar.gz | tar xvz
+            curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
             sudo mv migrate /usr/bin/
     - name: Migrate Database
       run: make migrateup
