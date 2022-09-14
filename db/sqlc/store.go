@@ -6,7 +6,11 @@ import (
 	"fmt"
 )
 
+/* type Store interface{
+	Querier
+	TransferTx(ctx context.Context,arg TransferTxParams)(TransferTxResult, error)
 
+} */
 type Store struct{
 	*Queries
 	db *sql.DB
@@ -43,7 +47,7 @@ type TransferTxParams struct{
 
 type TransferTxResult struct{
 	Transfer Transfer `json:"transfer"`
-	FromAccount  Account `json:"from_account`
+	FromAccount  Account `json:"from_account"`
 	ToAccount    Account `json:"to_account"`
 	FromEntry    Entry   `json:"from_entry"`
 	ToEntry      Entry   `json:"to_entry"`
